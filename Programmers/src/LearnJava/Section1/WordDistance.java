@@ -19,18 +19,18 @@ public class WordDistance {
                 answer[i] = score;
             }
         }
-        score =1000;
-        for (int i = s1[0].length()-1; i >= 0; i--) {
+        score = 1000;
+        for (int i = s1[0].length() - 1; i >= 0; i--) {
             if (s1[0].charAt(i) == c) {
                 score = 0;
             } else {
                 score++;
                 //둘중에 작은수로 넣기
-                answer[i] = Math.min(answer[i],score);
+                answer[i] = Math.min(answer[i], score);
             }
         }
-        for (int i : answer){
-            System.out.print(i +" ");
+        for (int i : answer) {
+            System.out.print(i + " ");
         }
     }
 }

@@ -1,42 +1,38 @@
 package Programmers.level1;
 
-import java.util.*;
+        import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
-        String[] park = new String[]{"SOO", "OOO", "OOO"};
-        String[] routes = new String[]{"E 2", "S 2", "W 1"};
         Solution solution = new Solution();
-        solution.solution(park, routes);
-
+        String[] wallpaper = new String[]{".#...", "..#..", "...#."};
+        int[] solution1 = solution.solution(wallpaper);
+        for (int i = 0; i < solution1.length; i++) {
+            System.out.println(solution1[i]);
+        }
     }
 
-    public int[] solution(String[] park, String[] routes) {
-        String[][] park_map = new String[park.length][park.length];
-        Map<String, Integer> routes_list = new HashMap<>();
-        int x = 0;
-        int y = 0;
+    public int[] solution(String[] wallpaper) {
+        int lux, luy, rdx, rdy;
+        lux = Integer.MAX_VALUE;
+        luy = Integer.MAX_VALUE;
+        rdx = Integer.MIN_VALUE;
+        rdy = Integer.MIN_VALUE;
 
-        for (int i = 0; i < park.length; i++) {
-            for (int j = 0; j < park.length; j++) {
-                park_map[i][j] = String.valueOf(park[i].charAt(j));
-            }
-        }
-
-        for (int i = 0; i < park.length; i++) {
-            for (int j = 0; j < park.length; j++) {
-                String[] routes_split = routes[j].split(" ");
-                if (park_map[i][j].equals("S")) {
-                    x = j;
-                    y = i;
-
+        for (int i = 0; i < wallpaper.length; i++) {
+            for (int j = 0; j < wallpaper[i].length(); j++) {
+                if (wallpaper[i].charAt(j) == '#') {
+                    lux = Math.min(lux,i);
+                    luy = Math.min(luy,j);
+                    rdx = Math.max(rdx,i);
+                    rdy = Math.max(rdy,j);
                 }
             }
+
         }
-        int[] answer = {};
+        int[] answer = {lux,luy,rdx+1,rdy+1};
         return answer;
     }
-
 
 }
 

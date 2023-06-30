@@ -1,38 +1,43 @@
 package Programmers.level1;
 
-        import java.util.*;
+import java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String[] wallpaper = new String[]{".#...", "..#..", "...#."};
-        int[] solution1 = solution.solution(wallpaper);
-        for (int i = 0; i < solution1.length; i++) {
-            System.out.println(solution1[i]);
+        String[] keymap = new String[]{"ABACD", "BCEFD"};
+        String[] target = new String[]{"ABCD", "AABB"};
+        int[] solution1 = solution.solution(keymap, target);
+        for (int num : solution1){
+            System.out.println("solution1 = " + num);
         }
+
     }
 
-    public int[] solution(String[] wallpaper) {
-        int lux, luy, rdx, rdy;
-        lux = Integer.MAX_VALUE;
-        luy = Integer.MAX_VALUE;
-        rdx = Integer.MIN_VALUE;
-        rdy = Integer.MIN_VALUE;
-
-        for (int i = 0; i < wallpaper.length; i++) {
-            for (int j = 0; j < wallpaper[i].length(); j++) {
-                if (wallpaper[i].charAt(j) == '#') {
-                    lux = Math.min(lux,i);
-                    luy = Math.min(luy,j);
-                    rdx = Math.max(rdx,i);
-                    rdy = Math.max(rdy,j);
+    public int[] solution(String[] keymap, String[] targets) {
+        List<Integer> pocket = new ArrayList<>();
+        int[] answer = new int[targets.length];
+        int cnt =0;
+        for (int i = 0; i < targets.length ; i++) {
+            for (int j = 0; j < targets[i].length();  j++) {
+                char target = targets[i].charAt(j);
+                for (int k = 0; k < keymap[i].length(); k++) {
+                    if(keymap[i].charAt(k) == target){
+                        System.out.println("j = " + (k+1));
+                        pocket.add(k+1);
+                        break;
+                    }
                 }
             }
+            System.out.println("i = " + pocket.get(i));
+            Collections.sort(pocket);
+            cnt += pocket.get(0);
 
+            System.out.println("cnt = " + cnt);
+            answer[i] = cnt;
         }
-        int[] answer = {lux,luy,rdx+1,rdy+1};
+
+
         return answer;
     }
-
 }
-

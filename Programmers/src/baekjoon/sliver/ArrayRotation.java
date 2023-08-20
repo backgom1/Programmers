@@ -1,4 +1,4 @@
-package baekjoon.sliver1;
+package baekjoon.sliver;
 
 import java.util.Scanner;
 

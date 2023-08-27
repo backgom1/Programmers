@@ -1,4 +1,4 @@
-package baekjoon.gold5;
+package baekjoon.gold;
 
 import java.util.*;
 

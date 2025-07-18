@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
  */
 public class ChangeFormation_11005 {
 
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] split = br.readLine().split(" ");

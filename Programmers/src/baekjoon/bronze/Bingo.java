@@ -1,4 +1,4 @@
-package baekjoon;
+package baekjoon.bronze;
 
 import java.io.IOException;
 import java.util.Scanner;

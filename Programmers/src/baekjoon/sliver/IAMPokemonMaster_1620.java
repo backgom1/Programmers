@@ -27,7 +27,7 @@ public class IAMPokemonMaster_1620 {
 
         //어떻게 찾을껀지!
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < find; i++) {
+        for (int i = 0; i < find; i++) { //O(n)
             String findPokemon = br.readLine();
 
             if (pokemonName.containsKey(findPokemon)) {

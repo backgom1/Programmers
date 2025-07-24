@@ -2,8 +2,8 @@ package learn;
 
 public class GCDAndLCM {
     public static void main(String[] args) {
-        int a = 10;
-        int b = 20;
+        int a = 31;
+        int b = 35;
         System.out.println(gcd(a, b));
         System.out.println(lcm(a, b));
     }

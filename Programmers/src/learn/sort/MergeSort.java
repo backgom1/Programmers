@@ -1,19 +1,22 @@
 package learn.sort;
 
+import java.util.Arrays;
+
 public class MergeSort {
 
 
     public static void main(String[] args) {
         int[] arr = new int[]{5, 4, 3, 2, 1};
-        sort(arr);
+        System.out.println(Arrays.toString(sort(arr)));
     }
 
-    public static void sort(int[] arr) {
+    public static int[] sort(int[] arr) {
         if (arr == null || arr.length <= 1) {
-            return; // 배열이 비어있거나 원소가 하나면 이미 정렬됨
+            return null; // 배열이 비어있거나 원소가 하나면 이미 정렬됨
         }
         int[] temp = new int[arr.length]; // 합병을 위한 임시 배열
         mergeSort(arr, temp, 0, arr.length - 1);
+        return arr;
     }
 
     private static void mergeSort(int[] arr, int[] temp, int left, int right) {

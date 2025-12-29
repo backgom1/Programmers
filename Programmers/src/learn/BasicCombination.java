@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class BasicCombination {
 
-    public static void combination(int[] arr, int[] result, int start, int depth, int r) {
+        public static void combination(int[] arr, int[] result, int start, int depth, int r) {
         // r개를 다 선택했으면 출력
         if (depth == r) {
             System.out.println(Arrays.toString(result));
